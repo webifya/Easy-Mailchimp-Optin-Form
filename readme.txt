@@ -1,96 +1,94 @@
 === Easy Mailchimp Optin Form ===
-Contributors: Mahfuzar
-Tags: mailchimp, email, newsletter, signup, marketing, plugin, widget, mailchimp optin, Mail chimp Opt in, mail chimp signup, mailchimp form
-Requires at least: 3.1
-Tested up to: 4.0
-Stable tag: 1.5
+Contributors: mahfuzar
+Tags: mailchimp, email, newsletter, signup form, optin form, responsive form
+Requires at least: 5.8
+Tested up to: 6.8
+Requires PHP: 7.4
+Stable tag: 2.0.0
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Donate link: http://mahfuzar.info/
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+Connect WordPress to Mailchimp, create responsive subscription forms, choose from five templates, and embed forms using shortcodes.
 
 == Description ==
 
-The MailChimp plugin allows you to quickly and easily add a signup form for your MailChimp list as a widget on your WordPress 2.8 or higher site.
+Easy Mailchimp Optin Form provides a simple WordPress-native form builder for Mailchimp audiences.
 
-Not sure what [MailChimp](http://www.mailchimp.com/features/full_list/) is or if it will be helpful? Signup up for a [FREE Trial Account](http://www.mailchimp.com/signup/) and see for yourself!
+Features:
 
-After Installation, the setup page will guide you through entering API information, selecting your List and then add the Widget to your site. The time from starting installation to have the form on your site should be less than 5 minutes - absolutely everything can be done via the Wordpress Setting GUI - no file editing at all!
+* Connect with a Mailchimp Marketing API key.
+* Automatically load Mailchimp audiences.
+* Create and manage multiple opt-in forms.
+* Choose from five responsive templates: Classic, Minimal, Card, Dark, and Inline.
+* Optional first-name and last-name fields.
+* Optional double opt-in confirmation.
+* Custom title, description, button text, and success message.
+* Secure form submissions using WordPress nonces and a honeypot field.
+* Add or update subscribers through Mailchimp Marketing API v3.
+* Embed each form with its generated shortcode.
+* Backward-compatible `[mailchimp]` shortcode that displays the first available form.
 
 == Installation ==
 
-This section describes how to install the plugin and get started using it.
+1. Upload the plugin folder to `/wp-content/plugins/` or install it from WordPress.org.
+2. Activate **Easy Mailchimp Opt-in**.
+3. Go to **Easy Mailchimp > Easy Mailchimp**.
+4. Enter and save your Mailchimp API key.
+5. Click **Test connection**.
+6. Go to **Easy Mailchimp > Forms**.
+7. Create a form and select a Mailchimp audience and template.
+8. Copy the generated shortcode into a page, post, or widget.
 
-= Version 2.8+ =
-1. Unzip our archive and upload the entire `mailchimp` directory to your `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Go to Settings and look for "MailChimp Setup" in the menu
-4. Enter your MailChimp API Key and let the plugin verify it.
-5. Select One of your lists to have your visitors subscribe to.
-6. Finally, go to Appearance->Widgets and drag the `MailChimp Widget` widget into one of your Widget Areas
-7. And you are DONE!
+Example:
 
-= Advanced =
-If you have a custom coded sidebar or something else special going on where you can't simply enable the widget through the Wordpress GUI, all you need to do is:
-
-If you are using Wordpress v2.8 or higher, you can use the short-code:
-` [mailchimp Optin="1"] `
-
-Where ever you want it to show up.
-
-
-== Developer Mode ==
-
-You can enable "Devleoper Mode" by adding the following line to your `wp-config.php` file just above the "That's all, stope editing!" line.
-
-    define('MAILCHIMP_DEV_MODE', true);
-
-This will enable the MailChimp List Subscribe plugin to operate without the need to connect an external MailChimp Account, and will provide a
-subscription form widget that will not actually submit anywhere.
-
-This will allow you to style and configure the widget in non-production environments that are not publicly accessible.
-
-For more Developer Mode customization options see the following article:
-
-http://connect.mailchimp.com/how-to/how-to-article-configuring-developer-mode-for-the-list-subscribe-wordpress-plugin
+`[easy_mailchimp_form id="form-ab12cd34"]`
 
 == Frequently Asked Questions ==
 
-= What in the world is MailChimp? =
+= Where do I find my Mailchimp API key? =
 
-Good question! [MailChimp](http://mailchimp.com/features/all/) is full of useful, powerful email marketing features that are easy to use and even a little fun (that's right---we said fun), whether you're an email marketing expert, or a small business just getting started.
+Create an API key from your Mailchimp account's API key settings. The plugin detects the Mailchimp data center from the key suffix, such as `-us21`.
 
-To learn more, just check out our site: [MailChimp](http://mailchimp.com/features/all/)
+= Does the plugin support double opt-in? =
 
+Yes. Enable **Require email confirmation** when creating or editing a form.
 
-= Wait a minute, you want me to pay to try this? =
+= Are the forms responsive? =
 
-*Absolutely not!* We welcome you to come signup for a [FREE Trial Account](http://mailchimp.com/signup/) and see if you find it useful.
+Yes. All five included templates adapt to mobile, tablet, and desktop widths.
 
+= Can I create multiple forms? =
 
+Yes. Every form has its own settings, audience, template, and shortcode.
 
-== Screenshots ==
+= What happens to the old shortcode? =
 
-1. Plugin setting page Settings > mailchimp. 
-2. An example mailchimp Optin Widget
-3. Demo Optin form. 
+The legacy `[mailchimp]` shortcode remains available and displays the first form created in the new form manager.
 
+== Changelog ==
 
+= 2.0.0 =
+* Rebuilt the plugin around Mailchimp Marketing API v3.
+* Added Mailchimp API connection testing and audience loading.
+* Added a multiple-form management interface.
+* Added five responsive form templates.
+* Added generated per-form shortcodes.
+* Added optional names, double opt-in, custom content, secure nonces, and honeypot protection.
+* Removed reliance on the obsolete bundled MCAPI integration and remote 2014 design assets.
 
+= 1.5 =
+* Maintenance release.
 
-== Changelog == 
+= 1.3 =
+* Fixed input field width issue.
 
-version 1.0 - 20.8.2014
-First release
-version 1.1 - 8.9.2014
-fixed name and email icon
-version 1.3 - 9.9.2014
-fixed input field width issue
+= 1.1 =
+* Fixed name and email icons.
+
+= 1.0 =
+* Initial release.
 
 == Upgrade Notice ==
 
-= 1.0 =
-First release 
-= 1.1 =
-Name and email icon fixed.
-= 1.3 =
-fixed input field width issue
+= 2.0.0 =
+This is a major upgrade. After updating, connect your Mailchimp API key and create at least one form under Easy Mailchimp > Forms.
