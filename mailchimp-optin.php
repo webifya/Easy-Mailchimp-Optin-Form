@@ -3,11 +3,11 @@
  * Plugin Name: Easy Mailchimp Opt-in
  * Plugin URI: https://wordpress.org/plugins/easy-mailchimp-opt-in/
  * Description: Premium Mailchimp form builder with live preview, responsive templates, AJAX subscriptions, GDPR, spam protection, analytics, Gutenberg and Elementor support.
- * Version: 3.1.1
+ * Version: 3.1.2
  * Requires at least: 6.2
  * Requires PHP: 7.4
  * Author: Mahfuzar
- * Author URI: https://mahfuzar.info
+ * Author URI: https://webninjallc.com
  * License: GPLv2 or later
  * Text Domain: easy-mailchimp-optin
  */
