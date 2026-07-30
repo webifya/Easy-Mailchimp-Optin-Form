@@ -46,21 +46,37 @@ jobs:
             exit 1
           fi
 
-      - name: Verify WordPress.org credentials are configured
+      - name: Resolve WordPress.org credentials
+        id: credentials
         shell: bash
         env:
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          WORDPRESS_SVN_USERNAME: ${{ secrets.WORDPRESS_SVN_USERNAME }}
+          WORDPRESS_SVN_PASSWORD: ${{ secrets.WORDPRESS_SVN_PASSWORD }}
+          WORDPRESS_USERNAME: ${{ secrets.WORDPRESS_USERNAME }}
+          WORDPRESS_PASSWORD: ${{ secrets.WORDPRESS_PASSWORD }}
+          WP_ORG_USERNAME: ${{ secrets.WP_ORG_USERNAME }}
+          WP_ORG_PASSWORD: ${{ secrets.WP_ORG_PASSWORD }}
         run: |
           set -euo pipefail
-          if [ -z "${SVN_USERNAME}" ] || [ -z "${SVN_PASSWORD}" ]; then
-            echo "Error: SVN_USERNAME or SVN_PASSWORD repository secret is missing."
+
+          USERNAME="${SVN_USERNAME:-${WORDPRESS_SVN_USERNAME:-${WORDPRESS_USERNAME:-${WP_ORG_USERNAME:-}}}}"
+          PASSWORD="${SVN_PASSWORD:-${WORDPRESS_SVN_PASSWORD:-${WORDPRESS_PASSWORD:-${WP_ORG_PASSWORD:-}}}}"
+
+          if [ -z "${USERNAME}" ] || [ -z "${PASSWORD}" ]; then
+            echo "Error: WordPress.org SVN credentials were not available to GitHub Actions."
+            echo "Create repository secrets under Settings > Secrets and variables > Actions."
+            echo "Recommended names: SVN_USERNAME and SVN_PASSWORD."
             exit 1
           fi
+
+          echo "svn_username=${USERNAME}" >> "${GITHUB_OUTPUT}"
+          echo "svn_password=${PASSWORD}" >> "${GITHUB_OUTPUT}"
 
       - name: Deploy to WordPress.org
         uses: 10up/action-wordpress-plugin-deploy@stable
         env:
-          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
-          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SVN_USERNAME: ${{ steps.credentials.outputs.svn_username }}
+          SVN_PASSWORD: ${{ steps.credentials.outputs.svn_password }}
           SLUG: easy-mailchimp-opt-in
