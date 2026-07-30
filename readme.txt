@@ -1,6 +1,6 @@
 === Easy Mailchimp Optin Form ===
 Contributors: mahfuzar
-Tags: mailchimp, email, newsletter, signup form, optin form, form builder, gutenberg, elementor
+Tags: mailchimp, newsletter, signup form, optin form, email marketing
 Requires at least: 6.2
 Tested up to: 6.8
 Requires PHP: 7.4
