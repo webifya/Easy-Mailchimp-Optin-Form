@@ -3,7 +3,7 @@
 Plugin Name: Easy Mailchimp Opt-in
 Plugin URL: http://www.mailchimp.com
 Description: Very nice and professional Opt-in form for Mailchimp list. 
-Version: 1.3.1
+Version: 1.5
 Author: Mahfuzar
 Author URI: http://www.mahfuzar.info
 Contributors: mahfuzar
