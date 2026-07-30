@@ -4,7 +4,7 @@ Tags: mailchimp, email, newsletter, signup form, optin form, form builder, guten
 Requires at least: 6.2
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 3.0.0
+Stable tag: 3.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,9 @@ Build responsive Mailchimp opt-in forms with AJAX, templates, GDPR, spam protect
 
 == Description ==
 
-Easy Mailchimp Optin Form is a modern WordPress form suite for Mailchimp Marketing API v3.
+Easy Mailchimp Optin Form is a modern WordPress form suite for Mailchimp Marketing API v3, developed by Mahfuzar Rahman of Web Ninja LLC.
+
+Plugin website: https://webninjallc.com
 
 Features:
 
@@ -20,11 +22,13 @@ Features:
 * Automatically load Mailchimp audiences and member counts.
 * Create and manage multiple forms.
 * Ten responsive templates: Classic, Minimal, Card, Dark, Inline, Gradient, Split, Bordered, Soft, and Bold.
+* Professional compact form-builder interface with live preview.
 * AJAX submissions without page reloads.
 * First name, last name, phone, GDPR consent, custom success message, and optional redirect.
 * Single or double opt-in.
-* Mailchimp tags and interest groups.
-* Custom Mailchimp merge-field mapping using JSON.
+* Mailchimp tags and visual interest-group selection.
+* Visual Mailchimp merge-field mapping controls.
+* Per-form colors, border radius, and scoped custom CSS.
 * Honeypot, Cloudflare Turnstile, or Google reCAPTCHA protection.
 * Per-form views, submissions, and conversion analytics.
 * Gutenberg block.
@@ -55,7 +59,15 @@ Yes. Double opt-in can be enabled separately for each form.
 
 = Can I assign tags and interest groups? =
 
-Yes. Enter comma-separated tags and optional Mailchimp interest-group JSON in the form editor.
+Yes. Add comma-separated tags and select available Mailchimp interest groups directly in the form editor.
+
+= Can I map Mailchimp merge fields? =
+
+Yes. Supported audience merge fields are loaded automatically and can be mapped with dropdown controls.
+
+= Can I add custom CSS? =
+
+Yes. Each form includes scoped custom CSS. Use `{{FORM}}` as the selector placeholder so styles only affect that form.
 
 = Does it work with Elementor? =
 
@@ -74,6 +86,21 @@ Built-in honeypot, Cloudflare Turnstile, and Google reCAPTCHA v2.
 Yes. All included templates adapt to mobile, tablet, and desktop layouts.
 
 == Changelog ==
+
+= 3.1.2 =
+* Updated author name to Mahfuzar Rahman and website to Web Ninja LLC.
+* Aligned WordPress.org stable-tag metadata with the release version.
+* Hardened the GitHub deployment workflow for tagged releases.
+
+= 3.1.1 =
+* Fixed the PHP parse error in the premium form builder.
+* Improved PHP 7.4 compatibility for Gutenberg and Elementor integration.
+
+= 3.1.0 =
+* Added a professional compact form-builder interface.
+* Fixed and expanded the live form preview.
+* Replaced JSON interest-group and merge-field inputs with visual controls.
+* Added per-form colors, radius controls, and scoped custom CSS.
 
 = 3.0.0 =
 * Rebuilt the plugin as a premium-grade Mailchimp form suite.
@@ -101,5 +128,5 @@ Yes. All included templates adapt to mobile, tablet, and desktop layouts.
 
 == Upgrade Notice ==
 
-= 3.0.0 =
-This is a major upgrade. Test on a staging site, reconnect the Mailchimp API key, review spam-protection settings, and verify each form before publishing to production.
+= 3.1.2 =
+Use this release for the corrected author metadata and synchronized WordPress.org deployment metadata.
