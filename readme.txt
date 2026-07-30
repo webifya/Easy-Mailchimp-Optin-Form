@@ -1,80 +1,91 @@
 === Easy Mailchimp Optin Form ===
 Contributors: mahfuzar
-Tags: mailchimp, email, newsletter, signup form, optin form, responsive form
-Requires at least: 5.8
+Tags: mailchimp, email, newsletter, signup form, optin form, form builder, gutenberg, elementor
+Requires at least: 6.2
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 2.0.0
+Stable tag: 3.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Connect WordPress to Mailchimp, create responsive subscription forms, choose from five templates, and embed forms using shortcodes.
+Build responsive Mailchimp opt-in forms with AJAX, templates, GDPR, spam protection, analytics, Gutenberg, Elementor, tags, groups, and import/export.
 
 == Description ==
 
-Easy Mailchimp Optin Form provides a simple WordPress-native form builder for Mailchimp audiences.
+Easy Mailchimp Optin Form is a modern WordPress form suite for Mailchimp Marketing API v3.
 
 Features:
 
-* Connect with a Mailchimp Marketing API key.
-* Automatically load Mailchimp audiences.
-* Create and manage multiple opt-in forms.
-* Choose from five responsive templates: Classic, Minimal, Card, Dark, and Inline.
-* Optional first-name and last-name fields.
-* Optional double opt-in confirmation.
-* Custom title, description, button text, and success message.
-* Secure form submissions using WordPress nonces and a honeypot field.
-* Add or update subscribers through Mailchimp Marketing API v3.
-* Embed each form with its generated shortcode.
-* Backward-compatible `[mailchimp]` shortcode that displays the first available form.
+* Connect and test a Mailchimp Marketing API key.
+* Automatically load Mailchimp audiences and member counts.
+* Create and manage multiple forms.
+* Ten responsive templates: Classic, Minimal, Card, Dark, Inline, Gradient, Split, Bordered, Soft, and Bold.
+* AJAX submissions without page reloads.
+* First name, last name, phone, GDPR consent, custom success message, and optional redirect.
+* Single or double opt-in.
+* Mailchimp tags and interest groups.
+* Custom Mailchimp merge-field mapping using JSON.
+* Honeypot, Cloudflare Turnstile, or Google reCAPTCHA protection.
+* Per-form views, submissions, and conversion analytics.
+* Gutenberg block.
+* Elementor widget when Elementor is active.
+* JSON form import and export.
+* Generated shortcode for every form.
+* Backward-compatible `[mailchimp]` shortcode.
 
 == Installation ==
 
 1. Upload the plugin folder to `/wp-content/plugins/` or install it from WordPress.org.
 2. Activate **Easy Mailchimp Opt-in**.
-3. Go to **Easy Mailchimp > Easy Mailchimp**.
-4. Enter and save your Mailchimp API key.
-5. Click **Test connection**.
-6. Go to **Easy Mailchimp > Forms**.
-7. Create a form and select a Mailchimp audience and template.
-8. Copy the generated shortcode into a page, post, or widget.
+3. Open **Easy Mailchimp > Easy Mailchimp**.
+4. Enter your Mailchimp API key and test the connection.
+5. Configure optional Turnstile or reCAPTCHA keys.
+6. Open **Easy Mailchimp > Forms** and create a form.
+7. Add the generated shortcode, Gutenberg block, or Elementor widget to your page.
 
-Example:
+Example shortcode:
 
 `[easy_mailchimp_form id="form-ab12cd34"]`
 
 == Frequently Asked Questions ==
 
-= Where do I find my Mailchimp API key? =
+= Does it support double opt-in? =
 
-Create an API key from your Mailchimp account's API key settings. The plugin detects the Mailchimp data center from the key suffix, such as `-us21`.
+Yes. Double opt-in can be enabled separately for each form.
 
-= Does the plugin support double opt-in? =
+= Can I assign tags and interest groups? =
 
-Yes. Enable **Require email confirmation** when creating or editing a form.
+Yes. Enter comma-separated tags and optional Mailchimp interest-group JSON in the form editor.
 
-= Are the forms responsive? =
+= Does it work with Elementor? =
 
-Yes. All five included templates adapt to mobile, tablet, and desktop widths.
+Yes. An Easy Mailchimp Form widget is registered when Elementor is active.
 
-= Can I create multiple forms? =
+= Is a Gutenberg block included? =
 
-Yes. Every form has its own settings, audience, template, and shortcode.
+Yes. Search for **Easy Mailchimp Form** in the block inserter.
 
-= What happens to the old shortcode? =
+= Which spam protection methods are supported? =
 
-The legacy `[mailchimp]` shortcode remains available and displays the first form created in the new form manager.
+Built-in honeypot, Cloudflare Turnstile, and Google reCAPTCHA v2.
+
+= Are forms responsive? =
+
+Yes. All included templates adapt to mobile, tablet, and desktop layouts.
 
 == Changelog ==
 
+= 3.0.0 =
+* Rebuilt the plugin as a premium-grade Mailchimp form suite.
+* Added ten responsive templates and live admin preview.
+* Added AJAX subscriptions, GDPR consent, optional redirect, phone field, tags, groups, and custom merge-field mapping.
+* Added Honeypot, Cloudflare Turnstile, and Google reCAPTCHA protection.
+* Added form analytics, Gutenberg block, Elementor widget, and JSON import/export.
+* Improved API handling, validation, accessibility, and mobile responsiveness.
+
 = 2.0.0 =
-* Rebuilt the plugin around Mailchimp Marketing API v3.
-* Added Mailchimp API connection testing and audience loading.
-* Added a multiple-form management interface.
-* Added five responsive form templates.
-* Added generated per-form shortcodes.
-* Added optional names, double opt-in, custom content, secure nonces, and honeypot protection.
-* Removed reliance on the obsolete bundled MCAPI integration and remote 2014 design assets.
+* Migrated from the obsolete MCAPI library to Mailchimp Marketing API v3.
+* Added multiple forms, five responsive templates, and generated shortcodes.
 
 = 1.5 =
 * Maintenance release.
@@ -90,5 +101,5 @@ The legacy `[mailchimp]` shortcode remains available and displays the first form
 
 == Upgrade Notice ==
 
-= 2.0.0 =
-This is a major upgrade. After updating, connect your Mailchimp API key and create at least one form under Easy Mailchimp > Forms.
+= 3.0.0 =
+This is a major upgrade. Test on a staging site, reconnect the Mailchimp API key, review spam-protection settings, and verify each form before publishing to production.
