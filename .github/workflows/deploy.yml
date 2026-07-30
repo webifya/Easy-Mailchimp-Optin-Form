@@ -1,9 +1,17 @@
 name: Deploy to WordPress.org SVN
 
 on:
-  release:
-    types:
-      - published
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: wordpress-org-deploy
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -11,10 +19,44 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout release
-        uses: actions/checkout@v6
+      - name: Checkout release tag
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Validate release version
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="${GITHUB_REF_NAME}"
+          PLUGIN_VERSION=$(sed -n 's/^ \* Version: //p' mailchimp-optin.php | head -n 1 | tr -d '\r')
+          STABLE_TAG=$(sed -n 's/^Stable tag: //p' readme.txt | head -n 1 | tr -d '\r')
+
+          echo "Release tag: ${TAG}"
+          echo "Plugin version: ${PLUGIN_VERSION}"
+          echo "Readme stable tag: ${STABLE_TAG}"
+
+          if [ "${TAG}" != "${PLUGIN_VERSION}" ]; then
+            echo "Error: release tag does not match the plugin header version."
+            exit 1
+          fi
+
+          if [ "${TAG}" != "${STABLE_TAG}" ]; then
+            echo "Error: release tag does not match readme.txt Stable tag."
+            exit 1
+          fi
+
+      - name: Verify WordPress.org credentials are configured
+        shell: bash
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SVN_USERNAME}" ] || [ -z "${SVN_PASSWORD}" ]; then
+            echo "Error: SVN_USERNAME or SVN_PASSWORD repository secret is missing."
+            exit 1
+          fi
 
       - name: Deploy to WordPress.org
         uses: 10up/action-wordpress-plugin-deploy@stable
