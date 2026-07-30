@@ -1,9 +1,9 @@
 === Easy Mailchimp Optin Form ===
 Contributors: Mahfuzar
 Tags: mailchimp, email, newsletter, signup, marketing, plugin, widget, mailchimp optin, Mail chimp Opt in, mail chimp signup, mailchimp form
-Requires at least: 2.8
+Requires at least: 3.1
 Tested up to: 4.0
-Stable tag: 1.4
+Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: http://mahfuzar.info/
