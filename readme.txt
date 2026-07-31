@@ -4,7 +4,7 @@ Tags: mailchimp, newsletter, signup form, optin form, email marketing
 Requires at least: 6.2
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 3.1.5
+Stable tag: 3.1.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -91,6 +91,14 @@ Built-in honeypot, Cloudflare Turnstile, and Google reCAPTCHA v2.
 Yes. All included templates adapt to mobile, tablet, and desktop layouts.
 
 == Changelog ==
+
+= 3.1.6 =
+* Added official WordPress.org plugin banners, icons, and screenshots.
+* Improved plugin branding and directory presentation.
+* Enhanced readme documentation and plugin metadata.
+* Improved overall user experience on the WordPress.org plugin page.
+* Minor UI refinements and code cleanup.
+* Fixed small issues and improved plugin stability.
 
 = 3.1.5 =
 * Bug Fixes
