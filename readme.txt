@@ -4,7 +4,7 @@ Tags: mailchimp, newsletter, signup form, optin form, email marketing
 Requires at least: 6.2
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 3.1.4
+Stable tag: 3.1.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,11 @@ Features:
 5. Configure optional Turnstile or reCAPTCHA keys.
 6. Open **Easy Mailchimp > Forms** and create a form.
 7. Add the generated shortcode, Gutenberg block, or Elementor widget to your page.
+
+== Screenshots ==
+
+1. API Integration 
+2. Form Builder.
 
 Example shortcode:
 
