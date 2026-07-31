@@ -92,6 +92,10 @@ Yes. All included templates adapt to mobile, tablet, and desktop layouts.
 
 == Changelog ==
 
+= 3.1.5 =
+* Bug Fixes
+* Screenshots added
+
 = 3.1.2 =
 * Updated author name to Mahfuzar Rahman and website to Web Ninja LLC.
 * Aligned WordPress.org stable-tag metadata with the release version.
